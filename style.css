@@ -59,8 +59,20 @@ article img{
 
 
 
-label { 
+.label { 
 	cursor: pointer;
+}
+
+label {
+	padding: 5%;
+	cursor: pointer;
+}
+
+label:hover .label {
+	background: #777;
+	border-color: rgb(255, 255, 255) !important; 
+	border: 2px solid white;
+	transition: all .5s ease;
 }
 
 .container input{ 
@@ -90,7 +102,7 @@ label {
 #switch5:checked ~ .slides .text{margin-left: 0;}
 
 
-.controls label{ 
+.controls .label{ 
 	border-radius: 50%; 
 	border: 2px solid black;
 	display: inline-block; 
@@ -98,6 +110,7 @@ label {
 	height: 1.5vw;
 	background: rgb(145, 139, 139);
 	transition: all .5s ease;
+	display: block;
 }
 
 .controls{ 
@@ -109,19 +122,14 @@ label {
 	
 }
 
-.controls label:hover{ 
-	background: #777;
-	border-color: rgb(255, 255, 255) !important; 
-	border: 2px solid white;
-	transition: all .5s ease;
-}
 
 
-#switch1:checked ~ .controls label:nth-child(1),
-#switch2:checked ~ .controls label:nth-child(2),
-#switch3:checked ~ .controls label:nth-child(3),
-#switch4:checked ~ .controls label:nth-child(4),
-#switch5:checked ~ .controls label:nth-child(5){
+
+#switch1:checked ~ .controls label:nth-child(1) span,
+#switch2:checked ~ .controls label:nth-child(2) span,
+#switch3:checked ~ .controls label:nth-child(3) span,
+#switch4:checked ~ .controls label:nth-child(4) span,
+#switch5:checked ~ .controls label:nth-child(5) span{
 	background: #000;
 	border-color: #fff !important;
 	transition: all .5s ease;
@@ -138,9 +146,9 @@ label {
 
 
 @media  screen and  (max-width: 420px) {
-	.controls label{  
-		width: 2.5vw;
-		height: 2.5vw;
+	.controls .label{  
+		width: 3vw;
+		height: 3vw;
 	}
 
 	.controls{ 
@@ -171,6 +179,11 @@ label {
 	.text article {
 		text-align: center;
 		font-size: 5vw;
+		line-height: 6vw;
+	}
+
+	.text {
+		height: 10vw;
 	}
 
 
