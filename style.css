@@ -1,0 +1,190 @@
+body {
+    margin: 0;
+    background-color: rgba(145, 139, 139, 0.5);
+}
+
+.slider { 
+    display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	row-gap: 1.5vw;
+	margin: 1% auto 0;
+	max-width: 80vw;
+}
+
+.slides article { 
+	width: 20%;
+	float: left;
+}
+
+.slides .image { 
+	width: 500%;
+	line-height: 0;
+}
+
+.image_container { 
+	width: 100%;
+	overflow: hidden;
+}
+
+article img{ 
+	width: 100%;
+	border-radius: 1vw;
+}
+
+
+.text { 
+	
+	height: 5vh;
+	width: 500%;
+	line-height: 0;
+	display: flex;
+	align-items: center;
+	font-size: 3vw;
+	line-height: 4vw;
+	color: white;
+}
+
+.text_container { 
+	width: 60vw;
+	overflow: hidden;
+
+}
+
+.slides_text article { 
+	width: 20%;
+	float: left;
+}
+
+
+
+.label { 
+	cursor: pointer;
+}
+
+label {
+	padding: 5%;
+	cursor: pointer;
+}
+
+label:hover .label {
+	background: #777;
+	border-color: rgb(255, 255, 255) !important; 
+	border: 2px solid white;
+	transition: all .5s ease;
+}
+
+.container input{ 
+	display: none;
+}
+
+
+#switch1:checked ~ .slides .image{margin-left: 0;}
+
+#switch2:checked ~ .slides .image{margin-left: -100%;}
+
+#switch3:checked ~ .slides .image{margin-left: -200%;}
+
+#switch4:checked ~ .slides .image{margin-left: -300%;}
+
+#switch5:checked ~ .slides .image{margin-left: -400%;}
+
+
+#switch1:checked ~ .slides .text{margin-left: -400%;}
+
+#switch2:checked ~ .slides .text{margin-left: -300%;}
+
+#switch3:checked ~ .slides .text{margin-left: -200%;}
+
+#switch4:checked ~ .slides .text{margin-left: -100%;}
+
+#switch5:checked ~ .slides .text{margin-left: 0;}
+
+
+.controls .label{ 
+	border-radius: 50%; 
+	border: 2px solid black;
+	display: inline-block; 
+	width: 1.5vw;
+	height: 1.5vw;
+	background: rgb(145, 139, 139);
+	transition: all .5s ease;
+	display: block;
+}
+
+.controls{ 
+	width: 15vw;
+	display: flex;
+	text-align: center;
+    justify-content: space-around;
+    align-items: center;
+	
+}
+
+
+
+
+#switch1:checked ~ .controls label:nth-child(1) span,
+#switch2:checked ~ .controls label:nth-child(2) span,
+#switch3:checked ~ .controls label:nth-child(3) span,
+#switch4:checked ~ .controls label:nth-child(4) span,
+#switch5:checked ~ .controls label:nth-child(5) span{
+	background: #000;
+	border-color: #fff !important;
+	transition: all .5s ease;
+}
+
+.slides .image{ 
+	transition: all 600ms cubic-bezier(0.770, 0.000, 0.775, 1.000);
+}
+
+.slides .text{ 
+	transition: all 600ms cubic-bezier(0.770, 0.000, 0.775, 1.000);
+}
+
+
+
+@media  screen and  (max-width: 420px) {
+	.controls .label{  
+		width: 3vw;
+		height: 3vw;
+	}
+
+	.controls{ 
+		width: 25vw;
+		order: 2;
+	}
+
+	.text_container { 
+		width: 50vw;
+	}
+
+	.slider {
+		margin-top: 4%;
+		flex-wrap: nowrap;
+		flex-direction: column;
+		align-items: center;
+		row-gap: 4vw;
+	}
+
+	.slides {
+		order: 1;
+	}
+
+	.slides_text {
+		order: 4;
+	}
+
+	.text article {
+		text-align: center;
+		font-size: 5vw;
+		line-height: 6vw;
+	}
+
+	.text {
+		height: 10vw;
+	}
+
+
+}
